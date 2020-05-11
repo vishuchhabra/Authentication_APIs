@@ -7,14 +7,16 @@ const dotenv = require('dotenv')//for saving the password
 
 dotenv.config();
 
-
-//middlware for the routes
-app.use('/user',auth)
-
+//body-parser
 app.use(bodyParser.urlencoded({ extended: false }))
 
 //for the json data
 app.use(bodyParser.json())
+
+
+//middlware for the routes
+app.use('/user',auth)
+
 
 //connecting to the data base
 mongoose.connect(process.env.db,
