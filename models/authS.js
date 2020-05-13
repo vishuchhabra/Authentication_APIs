@@ -1,8 +1,34 @@
 const mongoose  = require('mongoose')
 
-const dataS  = mongoose.Schema(
+const dataS  =new mongoose.Schema(
 {
-   _id  : mongoose.Schema.Types.ObjectId,
-   name : String
+   name:
+   {
+      type:String,
+      min : 6,
+      max : 255,
+      required: true
+      
+   },
+   email:
+   {
+      type: String,
+      requried: true,
+      min : 6,
+      max : 255
+   },
+   password:
+   {
+      type:String,
+      required: true,
+      max: 1024,
+      min : 6
+   },
+   date:
+   {
+      type:Date,
+      default :  Date.now
+   }
+
 })
-module.exports = mongoose.model('Users',dataS)
+module.exports = mongoose.model('Users',dataS) 
