@@ -17,6 +17,11 @@ const dataS  =new mongoose.Schema(
       min : 6,
       max : 255
    },
+   status:
+   {
+      type:String,
+      default : "Unverified"
+   },
    password:
    {
       type:String,

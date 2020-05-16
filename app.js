@@ -13,6 +13,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 //for the json data
 app.use(bodyParser.json())
 
+//middlware for the static folder
+app.use(express.static('static'));
+
 
 //middlware for the routes
 app.use('/user',authi)
